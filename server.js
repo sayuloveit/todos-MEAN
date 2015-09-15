@@ -1,5 +1,3 @@
-// MEAN Stack RESTful API Tutorial - Contact List App
-
 var express = require('express');
 var app = express();
 var mongojs = require('mongojs');
@@ -10,7 +8,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 
 app.get('/todolist', function (req, res) {
-  console.log('I received a GET request');
+  console.log('GET request');
 
   db.todolist.find(function (err, docs) {
     console.log(docs);
@@ -54,4 +52,3 @@ app.put('/todolist/:id', function (req, res) {
 });
 
 app.listen(3000);
-console.log("Server running on port 3000");
